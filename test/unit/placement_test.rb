@@ -1,16 +1,18 @@
 require 'test_helper'
 
 class PlacementTest < ActiveSupport::TestCase
-  context "a Placement" do
+  should_validate_presence_of :section
+  should_validate_presence_of :ad_type
+  should_validate_presence_of :start_date
+  should_validate_presence_of :end_date
+
+  context "a placement factory" do
     setup do
       @placement = Factory.build(:placement)
     end
 
-    should "have a section, ad_type and start and end dates" do
-      assert @placement.section
-      assert @placement.ad_type
-      assert @placement.start_date
-      assert @placement.end_date
+    should "creates a valid object" do
+      assert @placement.valid?
     end
   end
 end
