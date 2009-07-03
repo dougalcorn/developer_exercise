@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class PlacementTest < ActiveSupport::TestCase
+  should_belong_to :buy
+
   should_validate_presence_of :section
   should_validate_presence_of :ad_type
   should_validate_presence_of :start_date
