@@ -15,4 +15,11 @@ class PlanTest < ActiveSupport::TestCase
     end
   end
 
+  test "a plan should have a cost equal to the sum of its buys' costs" do
+    Buy.any_instance.expects(:cost).returns(500).times(2)
+    @plan = Plan.new
+    @plan.expects(:buys).returns([Buy.new, Buy.new])
+
+    assert_equal 1000, @plan.cost
+  end
 end

@@ -15,4 +15,12 @@ class BuyTest < ActiveSupport::TestCase
       assert @buy.valid?
     end
   end
+
+  test "a buy should have a cost equal to the sum of its placements' costs" do
+    @placements = [mock(:cost => 30), mock(:cost => 20)]
+    @buy = Buy.new
+    @buy.expects(:placements).returns(@placements)
+
+    assert_equal 50, @buy.cost
+  end
 end
