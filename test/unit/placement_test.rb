@@ -17,4 +17,17 @@ class PlacementTest < ActiveSupport::TestCase
       assert @placement.valid?
     end
   end
+
+  test "a placement should have a price" do
+    @placement = Placement.new
+    assert_equal 0, @placement.cost
+  end
+
+  test "a placement's cost should be its rate times its quantity" do
+    @placement = Placement.new
+    @placement.expects(:rate).returns(100)
+    @placement.expects(:quantity).returns(5)
+
+    assert_equal 500, @placement.cost
+  end
 end
