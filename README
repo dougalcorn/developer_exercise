@@ -17,7 +17,7 @@ we work on every day at Centro.
 
 ==Tests
 
-Tests use Thoughtbot's Shoulda and FactoryGirl (included in vendor/gems). 
+The tests use Thoughtbot's Shoulda and FactoryGirl (both included in vendor/gems). 
 Documentation is available at http://www.thoughtbot.com/projects
 
 ==Exercises (Complete at least one, pick whichever you think will demonstrate
