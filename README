@@ -30,6 +30,8 @@ stories and provide tests for your code:
 * A Site belongs to a Buy.
 * A Site has a name, an URL and a billing contact (you don't need to implement 
   a Contact model).
+* Replace the site_name field on Buy with the Site model.
+* Write a finder on Plan to find all plans with Buys for a given Site.
 
 2. The application currently has no user interface. Complete these stories with 
   well-tested code:
