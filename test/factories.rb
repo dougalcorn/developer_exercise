@@ -1,3 +1,8 @@
+Factory.define(:site) do |site|
+  site.name "A site"
+  site.url "site.com"
+  site.billing_contact "Big Balla "
+end
 Factory.define(:placement) do |placement|
   placement.section "A section"
   placement.ad_type "768x90 Banner"
@@ -8,6 +13,7 @@ end
 Factory.define(:buy) do |buy|
   buy.site_name "facebook.com"
   buy.placements { |placements| [placements.association(:placement)] }
+  buy.sites { |sites| [sites.association(:site)]}
 end
 
 Factory.define(:plan) do |plan|
