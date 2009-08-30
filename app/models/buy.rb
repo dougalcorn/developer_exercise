@@ -1,7 +1,6 @@
 class Buy < ActiveRecord::Base
   belongs_to :plan
   has_many :placements
-  has_many :sites
   validates_presence_of :placements
   validates_presence_of :site_name
 
