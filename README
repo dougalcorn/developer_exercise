@@ -41,3 +41,8 @@ stories and provide tests for your code:
 * As a user, I cannot save a Plan unless it has at least one Buy.
 * As a user, I cannot save a Buy unless it has a Site or @site_name and at least one 
   Placement.
+  
+==When you're finished
+
+* Create a branch with your solution on it.
+* Send a Github pull request or any clone url to developers@centro.net
