@@ -20,12 +20,11 @@ we work on every day at Centro.
 The tests use Thoughtbot's Shoulda and FactoryGirl (both included in vendor/gems). 
 Documentation is available at http://www.thoughtbot.com/projects
 
-==Exercises (Complete at least one, pick whichever you think will demonstrate
-  your skills best.)
+==Exercises
 
 1. Currently, a Buy only has its site's name stored in an instance variable. 
 We've generated a resource called Site for you. Please complete the following user 
-stories and provide tests for your code:
+stories and provide tests for your code.
 
 * A Site belongs to a Buy.
 * A Site has a name, an URL and a billing contact (you don't need to implement 
@@ -34,7 +33,7 @@ stories and provide tests for your code:
 * Write a finder on Plan to find all plans with Buys for a given Site.
 
 2. The application currently has no user interface. Complete these stories with 
-  well-tested code:
+  well-tested code. Don't worry about making it look awesome, just make it work.
 
 * As a user, I can create a new Plan.
 * As a user, I can add Buys to a Plan.
