@@ -13,7 +13,7 @@ class BuyTest < ActiveSupport::TestCase
     end
 
     should "create a valid object" do
-      assert @buy.valid?
+      assert @buy.valid?, pretty_error_messages(@buy)
     end
   end
 
@@ -23,5 +23,20 @@ class BuyTest < ActiveSupport::TestCase
     @buy.expects(:placements).returns(@placements)
 
     assert_equal 50, @buy.cost
+  end
+
+  context "with a site" do
+    setup { @site = Factory(:site) }
+
+    context "creating a buy with an existing site name" do
+      setup do
+        @buy = Factory(:buy, :site_name => @site.name)
+      end
+      should_not_change "Site.count"
+      should_change "Buy.count", :by => 1
+      should "assign the site to the buy" do
+        assert_equal @site, @buy.site
+      end
+    end
   end
 end

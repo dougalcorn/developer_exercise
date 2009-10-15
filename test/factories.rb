@@ -14,3 +14,8 @@ Factory.define(:plan) do |plan|
   plan.advertiser_name "Bossy Kitten"
   plan.buys { |buys| [buys.association(:buy)]  }
 end
+
+Factory.define(:site) do |site|
+  site.name "myspace.com"
+  site.url "http://myspace.com"
+end

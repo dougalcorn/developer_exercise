@@ -10,4 +10,9 @@ class Buy < ActiveRecord::Base
       n + p.cost
     end
   end
+
+  def site_name; site.name rescue ""; end
+  def site_name=(name)
+    self.site = Site.find_or_create_by_name(name)
+  end
 end
