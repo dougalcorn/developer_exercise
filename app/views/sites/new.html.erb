@@ -1,0 +1,5 @@
+<h1>Create a new Site</h1>
+<% form_for @site do |f| -%>
+<%= render :partial => "form", :object => f %>
+<%= submit_tag "Save" %>
+<% end -%>
