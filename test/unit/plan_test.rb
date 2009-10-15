@@ -7,11 +7,23 @@ class PlanTest < ActiveSupport::TestCase
 
   context "a plan factory" do
     setup do
-      @plan = Factory.build(:plan)
+      @plan = Factory(:plan)
     end
 
     should "build a valid instance" do
       assert @plan.valid?
+    end
+
+
+    context "finding buys for a site" do
+      setup do
+        @site = Factory(:site)
+        @buy = @plan.buys.create(:site => @site)
+        @plans = Plan.for_site(@site)
+      end
+      should "have our plan with a buy for our site" do
+        assert @plans.include?(@plan)
+      end
     end
   end
 
@@ -22,4 +34,6 @@ class PlanTest < ActiveSupport::TestCase
 
     assert_equal 1000, @plan.cost
   end
+
+
 end
