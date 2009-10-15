@@ -1,0 +1,6 @@
+<p><%= form.error_messages -%></p>
+<p><%= form.label :advertiser_name %><%= form.text_field :advertiser_name %></p>
+<p><%= form.label :buy_ids, "Buys" %><%= form.collection_select :buy_ids, @buys, :id, :site_name, 
+                                         {:prompt => "Select a buy",
+                                           :selected => @plan.buys.map(&:id)},
+                                         { :multiple => true, :size => 5} %></p>

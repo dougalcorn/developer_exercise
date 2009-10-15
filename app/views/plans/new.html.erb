@@ -1,0 +1,5 @@
+<h1>Create a New Plan</h1>
+<% form_for @plan do |form| -%>
+  <%= render :partial => "form", :object => form %>
+  <%= submit_tag "Save" %>
+<% end -%>
