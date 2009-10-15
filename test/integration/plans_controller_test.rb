@@ -1,6 +1,8 @@
 require 'test_helper'
 
-class PlansControllerTest < ActionController::TestCase
+class PlansControllerTest < ActionController::IntegrationTest
+  fixtures :all
+
   # Replace this with your real tests.
   test "the truth" do
     assert true
