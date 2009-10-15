@@ -1,0 +1,5 @@
+<h1>Create a New Buy</h1>
+<% form_for @buy do |form| -%>
+  <%= render :partial => "form", :object => form %>
+  <%= submit_tag "Save" %>
+<% end -%>

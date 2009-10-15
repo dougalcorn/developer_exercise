@@ -1,0 +1,10 @@
+<p><%= form.label :site_name %><%= form.text_field :site_name %></p>
+
+<% form.fields_for :placements, Placement.new do |p_form| -%>
+  <p><%= p_form.label :section %><%= p_form.text_field :section %></p>
+  <p><%= p_form.label :ad_type %><%= p_form.text_field :ad_type %></p>
+  <p><%= p_form.label :start_date %><%= p_form.datetime_select :start_date, :prompt => true %></p>
+  <p><%= p_form.label :end_date %><%= p_form.datetime_select :end_date, :prompt => true %></p>
+  <p><%= p_form.label :quantity %><%= p_form.text_field :quantity %></p>
+  <p><%= p_form.label :rate %><%= p_form.text_field :rate %></p>
+<% end -%>
